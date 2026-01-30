@@ -6,7 +6,7 @@
 This project analyzes a dataset of 1,470 employees to identify the root causes of attrition. By integrating **SQL** for data testing and **Tableau** for visualization, I discovered that **monthly income** and **specific job roles** (Sales Reps, Lab Techs) are the primary drivers of turnover.
 
 ## 📸 Dashboard Overview
-![Dashboard Preview]([PASTE_IMAGE_LINK_HERE](https://raw.githubusercontent.com/sarah-j-lech/HR-Employee-Attrition-Analysis/6473544c494304a02d6e664da2289dff82db7a17/dashboard_screenshot.png)
+![Dashboard Preview](https://raw.githubusercontent.com/sarah-j-lech/HR-Employee-Attrition-Analysis/6473544c494304a02d6e664da2289dff82db7a17/dashboard_screenshot.png)
 **[➡️ Click Here to Interact with the Live Dashboard on Tableau Public](https://public.tableau.com/views/HR_Attrition_Analysis_Capstone/HRAttritionDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
 
 ---
