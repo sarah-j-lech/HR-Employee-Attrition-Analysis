@@ -1,0 +1,141 @@
+PROJECT LOG: HR ATTRITION ANALYSIS
+Analyst: [Your Name]
+Start Date: Jan 26, 2026
+
+--- DAY 1 Part 1 ---
+1. Data Acquisition:
+   - Downloaded "IBM HR Analytics Employee Attrition & Performance" from Kaggle.
+   - Raw file contains 1,470 rows and 35 columns.
+
+2. Initial Inspection:
+   - Converted CSV to Excel Workbook (.xlsx) for editing.
+   - Created "Data Dictionary" tab to map variables.
+
+3. Data Quality Audit:
+   - Target Variable identified: "Attrition" (Yes/No).
+   - Redundant columns identified for deletion:
+     * Over18 (Single value: "Y")
+     * StandardHours (Single value: "80")
+     * EmployeeCount (Single value: "1")
+
+4. Next Steps:
+   - Proceed to Data Cleaning and Feature Engineering (Day 2).
+
+--- DAY 1 Part 2 ---
+1. Data Cleaning:
+   - Deleted zero-variance columns (EmployeeCount, Over18, StandardHours).
+   - Confirmed 0 duplicates in the dataset.
+
+2. Feature Engineering:
+   - Created "Age Group" column using Nested IF formula to segment employees into Young Adult (<30), Mid-Career (<50), and Senior.
+   - Created "Education Level" column using IFS formula to decode numeric values (1-5) into text descriptions.
+
+3. Status:
+   - Dataset is now "Analysis Ready."
+
+--- DAY 1 Part 3 ---
+1. Analysis (Pivot Tables):
+   - Calculated Overall Attrition Rate: 16.1%.
+   - Broke down attrition by Department: Research & Development had the highest attrition numbers.
+   - Broke down attrition by Age Group: Mid-Career employees have the highest attrition	rates followed by Young Adults. Senior employees have the lowest rates.
+
+2. Key Findings:
+   - 16% turnover is the company benchmark.
+   - Research & Development appears to have the highest turnover volume.
+   - Young Adults appear to be the most at-risk demographic.
+
+--- DAY 2 Part 1 ---
+1. SQL Setup:
+   - Installed DB Browser for SQLite.
+   - Created database `HR_Database.db`.
+   - Imported `employeedata.csv` successfully.
+
+2. Queries Ran:
+   - Performed basic SELECT statements to view data.
+   - Filtered data using WHERE clause to isolate employees with Attrition = 'Yes'.
+
+3. Skills Unlocked:
+   - Basic SQL Syntax (SELECT, FROM, WHERE).
+
+--- DAY 2 Part 2 ---
+1. SQL Aggregation:
+   - Learned COUNT(*) to calculate totals.
+   - Used GROUP BY to segment data (similar to Excel Pivot Tables).
+   - Used ORDER BY DESC to rank Job Roles by attrition volume.
+
+2. Key Finding:
+   - Confirmed via SQL that Laboratory Technician has the highest raw number of exits.
+
+--- DAY 2 Part 3 ---
+1. SQL Aggregation:
+   - Learned COUNT(*) to calculate totals.
+   - Used GROUP BY to segment data (similar to Excel Pivot Tables).
+   - Used ORDER BY DESC to rank Job Roles by attrition volume.
+
+2. Key Finding:
+   - Confirmed via SQL that Laboratory Technicians have the highest raw number of exits.
+
+--- DAY 2 Part 4 ---
+1. SQL Analysis:
+   - Calculated Average Monthly Income using AVG().
+   - Compared Income of "Leavers" vs "Stayers" using GROUP BY.
+
+2. Key Finding:
+   - Identified a salary gap: Employees who leave earn approx. $4,787 vs $6,832 for those who stay. 
+   - This suggests compensation is a primary driver of attrition.
+
+--- DAY 2 Part 5 ---
+1. SQL Logic:
+   - Mastered the CASE WHEN statement (SQL version of Excel IF).
+   - Created dynamic age segmentation in SQL.
+   - Used SUM(CASE...) to calculate custom counts in a single query.
+
+2. Weekly Review:
+   - Data is cleaned and structured.
+   - Key insights extracted:
+     * Turnover is highest in Sales/Lab Tech roles.
+     * Significant pay gap identified between leavers and stayers.
+     * Young Adults are the highest risk demographic.
+
+3. Next Phase: Data Visualization (Tableau Public).
+
+--- DAY 3 Part 1 ---
+1. Visualization Setup:
+   - Installed Tableau Public on Mac.
+   - Connected to `IBM_Attrition_Cleaned.xlsx`.
+
+2. First Chart:
+   - Created a basic Bar Chart showing Attrition counts to verify data connection.
+   - Learned the "Blue (Dimension) vs. Green (Measure)" concept.
+   - Published workbook to Tableau Public profile.
+
+--- DAY 3 Part 2 ---
+1. Visuals Created:
+   - "Attrition Risk by Age Group": Stacked 100% Bar Chart.
+   - "Department Analysis": Horizontal Stacked Bar Chart.
+
+2. Techniques Learned:
+   - Used "Quick Table Calculation" (% of Total) to visualize rates instead of raw counts.
+   - Mastered "Compute Using" (Down vs. Across) for stacked bars.
+   - Applied custom color palette (Gray for retention, Red for attrition) to focus attention.
+
+--- DAY 3 Part 3 ---
+1. Visuals Created:
+   - "Salary Analysis": Side-by-side bar chart comparing Avg Income of Leavers vs. Stayers by Job Role.
+
+2. Key Insight Visualized:
+   - Confirmed the salary gap visually.
+   - Managers and Research Directors have massive pay gaps between those who stay and those who leave.
+   - Sales Representatives have low pay overall, contributing to their high turnover.
+
+--- DAY 4 Part 1 ---
+1. Dashboard Construction:
+   - Assembled Age, Department, and Salary charts into a unified view.
+   - Set fixed resolution (1366x768) for professional display.
+
+2. Interactivity Added:
+   - Enabled "Use as Filter" on the Department chart. 
+   - Users can now click a specific department to see how Age and Salary risks change for that specific team.
+
+3. Status:
+   - Dashboard is functionally complete.
